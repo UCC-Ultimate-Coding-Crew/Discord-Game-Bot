@@ -39,6 +39,6 @@ async def on_message(message):
                     json.dump(data, outfile)
                     await message.channel.send('initialized')
 
-                    
 
-client.run('ODQ0ODY1NDEzMjI5MDUxOTA0.YKYoOw.bPgQ6LMs5nYD1DqHUQVBx9AAIXs')
+token=open(r"Discord-Game-Bot/token.txt", 'r').read()
+client.run(token)
