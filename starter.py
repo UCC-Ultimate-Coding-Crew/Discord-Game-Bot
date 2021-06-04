@@ -2,6 +2,7 @@ import discord
 import json
 from random import random, choice
 from create_user import create_new_user
+from battle import battle2v2
 data={
     'Flight1':{
         'Customer Satisfaction':0,
@@ -23,6 +24,8 @@ async def on_message(message):
         return
     if message.content.startswith('.start'):
         await create_new_user(message)
+    if message.content.startswith('.battle'):
+        await battle2v2(message)
 
 token=open(r"Discord-Game-Bot/token.txt", 'r').read()
 client.run(token)
