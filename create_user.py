@@ -14,7 +14,7 @@ def get_possible_cards():
 
     possible_cards=[]
 
-    with open('Discord-Game-Bot/cards.json') as card_data:
+    with open('cards.json') as card_data:
         cards=json.load(card_data)
         for i in cards:
             if cards[i]['Rarity']==chosen_type:
@@ -22,7 +22,7 @@ def get_possible_cards():
     return possible_cards
 
 async def create_new_user(message):
-    with open('Discord-Game-Bot/user_data.json') as json_file:
+    with open('user_data.json') as json_file:
             data = json.load(json_file)
             if str(message.author.id) in data.keys():
                 print('already exists')
@@ -40,10 +40,10 @@ async def create_new_user(message):
                     post_data[message.author.id]['deckSize']+=1
                     post_data[message.author.id]['Cards'][str(i)]=chosen_cards[i]
                 data.update(post_data)
-                with open('Discord-Game-Bot/user_data.json', 'w') as outfile:
+                with open('user_data.json', 'w') as outfile:
                     json.dump(data, outfile)
                     await message.channel.send('User has now been initialized')
-                    with open('Discord-Game-Bot/cards.json') as card_data:
+                    with open('cards.json') as card_data:
                         cards=json.load(card_data)
                         for i in range(post_data[message.author.id]['deckSize']):
                             card=cards[post_data[message.author.id]['Cards'][str(i)]]['Airline Name']
