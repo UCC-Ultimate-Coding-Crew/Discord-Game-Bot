@@ -11,6 +11,6 @@ async def helpout(message):
         printing+=i
         print('yolo', printing)
 
-    printing="```"
+    printing+="```"
     await message.channel.send(printing)
     print(printing)
