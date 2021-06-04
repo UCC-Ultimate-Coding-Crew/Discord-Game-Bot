@@ -42,5 +42,5 @@ async def on_message(message):
     if message.content == '.help':
         await helpout(message)
 
-token=open("Discord-Game-Bot/token.txt", 'r').read()
+token=open("token.txt", 'r').read()
 client.run(token)
