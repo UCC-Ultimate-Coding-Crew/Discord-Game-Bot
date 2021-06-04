@@ -40,8 +40,7 @@ def get_possible_cards():
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content.startswith('.hello'):
-        await message.channel.send('Hello World!')
+    
 
     if message.content.startswith('.start'):
         with open('Discord-Game-Bot/user_data.json') as json_file:
