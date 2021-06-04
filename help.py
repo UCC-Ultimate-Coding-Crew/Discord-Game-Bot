@@ -1,6 +1,4 @@
 async def helpout(message):
-    print("Welcome to the Airline Trump Cards")
-    print("Here a list of commands to play around with:")
     await message.channel.send("Welcome to the Airline Trump Cards")
     await message.channel.send("Here a list of commands to play around with:")
     

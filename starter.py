@@ -14,7 +14,6 @@ data={
     }
 }
 
-
 client= discord.Client()
 
 @client.event
