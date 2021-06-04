@@ -9,6 +9,6 @@ async def cardstrade(message):
             data = json.load(json_file)
             if str(message.author.id) in data.keys():
                 for i in data[str(message.author.id)]['Cards']:
-                    for j in data[str(message.author.id)]['Cards'][i]:
-                        await message.channel.send(j)
+                    j=data[str(message.author.id)]['Cards'][i]
+                    await message.channel.send(j)
                     
