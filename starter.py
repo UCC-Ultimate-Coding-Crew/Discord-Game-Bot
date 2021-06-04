@@ -2,6 +2,8 @@ import discord
 import json
 from random import random, choice
 from create_user import create_new_user
+from help import helpout
+
 data={
     'Flight1':{
         'Customer Satisfaction':0,
@@ -23,6 +25,8 @@ async def on_message(message):
         return
     if message.content.startswith('.start'):
         await create_new_user(message)
+    if message.content.startswith('.help'):
+        await helpout()
 
-token=open(r"Discord-Game-Bot/token.txt", 'r').read()
+token=open("token.txt", 'r').read()
 client.run(token)
