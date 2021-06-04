@@ -4,6 +4,7 @@ from random import random, choice
 from create_user import create_new_user
 from battle import battle2v2
 from help import helpout
+from trade import cardstrade
 
 data={
     'Flight1':{
@@ -30,6 +31,8 @@ async def on_message(message):
         await battle2v2(message)
     if message.content == '.help':
         await helpout(message)
+    if message.content == '.trade':
+        await cardstrade(message)
 
 token=open("token.txt", 'r').read()
 client.run(token)
