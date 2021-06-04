@@ -15,21 +15,11 @@ data={
     }
 }
 
-BOT_PREFIX = (".")
-bot = commands.Bot(command_prefix=BOT_PREFIX)
 client= discord.Client()
 
-@bot.event
+@client.event
 async def on_ready():
     print("Ready")
-
-@bot.command(pass_context=True)
-async def battle(ctx):
-    channel = ctx.message.channel
-    # t1 = time.perf_counter()
-    await bot.send_typing(channel)
-    # t2 = time.perf_counter()
-    await bot.say('{} has requested a battle'.format(ctx.author))
 
 @client.event
 async def on_message(message):
@@ -37,8 +27,8 @@ async def on_message(message):
         return
     if message.content.startswith('.start'):
         await create_new_user(message)
-    # if message.content.startswith('.battle'):
-    #     await battle2v2(message)
+    if message.content.startswith('.battle'):
+        await battle2v2(message)
     if message.content == '.help':
         await helpout(message)
 
