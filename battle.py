@@ -41,9 +41,17 @@ async def battle2v2(message, client):
         await message.channel.send("{}, your top card is:".format(p1.mention))
         await printTopCard(message.channel,p1.id, p1_ShuffledCards)
         await message.channel.send("Choose an attribute.")
-        def check_opponent(m):
-            return m.channel == message.channel
-        attribute = await client.wait_for("message", check=check_opponent)
+        def check_attribute(m):
+            notAttribute=True
+            attributes=[
+                "Overall Rating",
+                "Value For Money",
+                "Customer Rating"]
+            for i in p1_ShuffledCards:
+                if m.content in attributes:
+                    notAttribute=False
+            return m.channel == message.channel and not notAttribute
+        attribute = await client.wait_for("message", check=check_attribute)
         if p1_ShuffledCards[0][attribute.content] > p2_ShuffledCards[0][attribute.content]:
             await message.channel.send("{} won this round.".format(p1.mention))
             await message.channel.send("{} had:".format(p2.mention))
