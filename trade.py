@@ -23,5 +23,5 @@ async def cardstrade(message, client):
 			if(check_validity(cardTwo)):
 				await message.channel.send('{0} send .accept to accept the trade'.format(message.author.mention))
 def check_validity(message):
-	usercards=getCards(message)
+	usercards=getCards(message.author.id)
 	return message.content in usercards
