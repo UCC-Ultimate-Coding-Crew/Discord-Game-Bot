@@ -23,7 +23,7 @@ async def on_message(message):
     if message.content == '.help':
         await helpout(message)
     if message.content == '.trade':
-        await cardstrade(message)
+        await cardstrade(message, client)
 
 token=open("token.txt", 'r').read()
 client.run(token)
