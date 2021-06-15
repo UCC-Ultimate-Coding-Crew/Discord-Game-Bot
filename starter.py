@@ -40,6 +40,6 @@ async def on_message(message):
             else:
                 await message.channel.send("Already Claimed Today!")
 
-token= os.environ["BOT_TOKEN"]
-# token=open("token.txt", 'r').read()
+# token= os.environ["BOT_TOKEN"]
+token=open("token.txt", 'r').read()
 client.run(token)
