@@ -1,3 +1,4 @@
+from market import marketplace
 import discord
 import json
 import datetime
@@ -25,6 +26,8 @@ async def on_message(message):
         await helpout(message)
     if message.content == '.trade':
         await cardstrade(message, client)
+    if message.content == '.market':
+        await marketplace(message,client)
     if message.content == '.claim':
         today=datetime.date.today().strftime("%d %m %Y")
         with open('user_data.json') as json_file:
