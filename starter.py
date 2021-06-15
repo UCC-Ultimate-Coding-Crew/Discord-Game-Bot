@@ -7,6 +7,7 @@ from create_user import create_new_user
 from battle import battle2v2
 from help import helpout
 from trade import cardstrade
+import os
 
 client= discord.Client()
 
@@ -39,6 +40,6 @@ async def on_message(message):
             else:
                 await message.channel.send("Already Claimed Today!")
 
-
-token=open("token.txt", 'r').read()
+token= os.environ["BOT_TOKEN"]
+# token=open("token.txt", 'r').read()
 client.run(token)
