@@ -13,6 +13,8 @@ def getCards(uid):
 						usercards=airline[j]["Airline Name"]
 						ls.append(usercards)
 				return ls
+			else:
+				return []
 
 def getCardsWithStats(uid):
 	with open('user_data.json') as json_file:
@@ -35,9 +37,11 @@ def getAirlineCode(input):
 
 
 async def printCards(message):
-	await message.channel.send("{0} Your Cards:".format(message.author.mention))
+	# await message.channel.send("{0} Your Cards:".format(message.author.mention))
+	txt="{0} Your Cards:\n".format(message.author.mention)
 	for i in getCards(message.author.id):
-		await message.channel.send(i)
+		txt+=str(i)+'\n'
+	await message.channel.send(txt)
 
 
 def getCardCodes(message):
@@ -54,10 +58,12 @@ async def printCardCodes(message):
 	await message.channel.send("{0} Your Cards:".format(message.author.mention))
 	cards=getCardCodes(message)
 	pairs=cards.items()
-
+	txt='```'
 	for key,value in pairs:
 		name=getAirlineName(value)
-		await message.channel.send('{0} : {1}'.format(key,name))
+		txt+='{0} :\t {1}'.format(key,name)+'\n'
+	txt+='```'
+	await message.channel.send(txt)
 
 def getAirlineName(value):
 	with open('cards.json') as card:
@@ -68,9 +74,13 @@ def getAirlineName(value):
 async def printTopCard(channel, uid, shuffled=None):
 	if shuffled == None:
 		shuffled=getCardsWithStats(uid)
-	txt='```'
+	txt='```Airline Name\t'+shuffled[0]['Airline Name']+'\n'
+	count=1
 	for j in shuffled[0].items():
-		txt+=str(j[0])+":\t"+str(j[1])+"\n"
+		if j[0]=='Rarity' or j[0]=='Airline Name':
+			continue
+		txt+=str(count)+'. '+str(j[0])+":\t"+str(j[1])+"\n"
+		count+=1
 	txt+='```'
 	await channel.send(txt)
 

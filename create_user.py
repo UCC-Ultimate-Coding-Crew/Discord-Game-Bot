@@ -36,7 +36,7 @@ async def create_new_user(message):
                     message.author.id:{
                         'deckSize':0,
                         'Cards':{},
-                        'Money':10,
+                        'Tickets':10,
                         'LastClaimed': datetime.date.today().strftime("%d %m %Y")
                     }
                 }

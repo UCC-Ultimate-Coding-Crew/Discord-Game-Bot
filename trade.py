@@ -3,8 +3,7 @@ from utilities import getTotalCards, printCardCodes, completeTrade
 import json
 
 async def cardstrade(message, client):
-	await message.channel.send('{0} wants to trade'.format(message.author.mention))
-	await message.channel.send("Anyone wanting to trade these cards, .accept is the command")
+	await message.channel.send('{0} wants to trade\nAnyone wanting to trade these cards, .accept is the command.'.format(message.author.mention))
 	accept=['.accept']
 
 	def check(m):
@@ -39,10 +38,12 @@ async def cardstrade(message, client):
 			await message.channel.send("Trade completed!")
 			await printCardCodes(message)
 			await printCardCodes(msg)
+		else:
+			await message.channel.send("Trade denied.")
+			
 
 
 def check_validity(message):
 	count= getTotalCards(message)
-	input=int(message.content)
-	if(input<count):
-		return True
+	input_num=int(message.content)
+	return True if(input_num<count and input_num>=0) else False
