@@ -65,7 +65,7 @@ async def battle2v2(message, client):
                 break
         else:
             await message.channel.send("{} won this round.".format(p2.mention))
-            await message.channel.send("{} had:".format(p1.mention))
+            await message.channel.send("{} had:".format(p2.mention))
             await printTopCard(message.channel,p1.id, p1_ShuffledCards)
             p2_ShuffledCards.append(p2_ShuffledCards.pop(0))
             p2_ShuffledCards.append(p1_ShuffledCards.pop(0))
