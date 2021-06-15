@@ -62,16 +62,25 @@ async def battle2v2(message, client):
 
             if len(p2_ShuffledCards)==0:
                 await message.channel.send("{} has won!".format(p1.mention))
+                with open('user_data.json') as json_file:
+                    data = json.load(json_file)
+                    data[str(p1.id)]['Money']+=20
+                    json.dump(data,json_file)
                 break
         else:
             await message.channel.send("{} won this round.".format(p2.mention))
-            await message.channel.send("{} had:".format(p1.mention))
+            await message.channel.send("{} had:".format(p2.mention))
             await printTopCard(message.channel,p1.id, p1_ShuffledCards)
             p2_ShuffledCards.append(p2_ShuffledCards.pop(0))
             p2_ShuffledCards.append(p1_ShuffledCards.pop(0))
 
             if len(p1_ShuffledCards)==0:
                 await message.channel.send("{} has won!".format(p2.mention))
+                with open('user_data.json') as json_file:
+                    data = json.load(json_file)
+                    data[str(p2.id)]['Money']+=20
+                    json.dump(data,json_file)
+
                 break
             p2, p1 = p1, p2
             p1_ShuffledCards, p2_ShuffledCards = p2_ShuffledCards, p1_ShuffledCards
