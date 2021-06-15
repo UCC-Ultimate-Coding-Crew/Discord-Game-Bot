@@ -1,5 +1,6 @@
 import discord
 import json
+import datetime
 from random import random, choice
 
 def get_possible_cards():
@@ -30,10 +31,13 @@ async def create_new_user(message):
 
             else:
                 chosen_cards=[choice(get_possible_cards()) for i in range(2)]
+                
                 post_data={
                     message.author.id:{
                         'deckSize':0,
-                        'Cards':{}
+                        'Cards':{},
+                        'Money':10,
+                        'LastClaimed': datetime.date.today().strftime("%d %m %Y")
                     }
                 }
                 for i in range(len(chosen_cards)):
@@ -43,6 +47,7 @@ async def create_new_user(message):
                 with open('user_data.json', 'w') as outfile:
                     json.dump(data, outfile)
                     await message.channel.send('User has now been initialized')
+                    await message.channel.send('You get 10 coins for creating an account!')
                     with open('cards.json') as card_data:
                         cards=json.load(card_data)
                         for i in range(post_data[message.author.id]['deckSize']):
