@@ -38,7 +38,7 @@ async def battle2v2(message, client):
 
     await message.channel.send("{} will start.".format(p1.mention))
     while True:
-        await message.channel.send("{}, your top card is:".format(p1.mention))
+        await message.channel.send("{}, your current card is:".format(p1.mention))
         await printTopCard(message.channel,p1.id, p1_ShuffledCards)
         await message.channel.send("Choose an attribute.")
         def check_attribute(m):
@@ -85,5 +85,3 @@ async def battle2v2(message, client):
             p2, p1 = p1, p2
             p1_ShuffledCards, p2_ShuffledCards = p2_ShuffledCards, p1_ShuffledCards
             p1_cards, p2_cards=p2_cards, p1_cards
-            
-        
