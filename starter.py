@@ -35,19 +35,24 @@ async def on_message(message):
         with open('user_data.json') as json_file:
             data = json.load(json_file)
             date=data[str(message.author.id)]['LastClaimed']
-            if(today>date):
-                data[str(message.author.id)]['LastClaimed']=today
-                data[str(message.author.id)]['Tickets']+=5
-                with open('user_data.json', 'w') as output_file:
-                    json.dump(data,output_file)
-                await message.channel.send("You have claimed 5 Daily Flight Tickets. Check in tomorrow for more!")
-            else:
-                await message.channel.send("Already Claimed Today!")
+            date_split=date.split()
+            today_split=today.split()
+            if today_split[2]==date_split[2]:
+                if today_split[1]==date_split[1]:
+                    if today_split[0]==date_split[0]:
+                        await message.channel.send("Already Claimed Today!")
+                        return               
+            data[str(message.author.id)]['LastClaimed']=today
+            data[str(message.author.id)]['Tickets']+=5
+            with open('user_data.json', 'w') as output_file:
+                json.dump(data,output_file)
+            await message.channel.send("You have claimed 5 Daily Flight Tickets. Check in tomorrow for more!")
+
     if message.content=='.tickets':
         with open('user_data.json') as json_file:
             data = json.load(json_file)
             await message.channel.send("You have {} flight tickets.".format(str(data[str(message.author.id)]['Tickets'])))
 
-token= os.environ.get("BOT_TOKEN")
-# token=open("token.txt", 'r').read()
+# token= os.environ.get("BOT_TOKEN")
+token=open("token.txt", 'r').read()
 client.run(token)

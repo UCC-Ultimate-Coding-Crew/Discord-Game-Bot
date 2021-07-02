@@ -74,7 +74,7 @@ def getAirlineName(value):
 async def printTopCard(channel, uid, shuffled=None):
 	if shuffled == None:
 		shuffled=getCardsWithStats(uid)
-	txt='```Airline Name\t'+shuffled[0]['Airline Name']+'\n'
+	txt='```Airline Name:\t'+shuffled[0]['Airline Name']+'\n'
 	count=1
 	for j in shuffled[0].items():
 		if j[0]=='Rarity' or j[0]=='Airline Name':

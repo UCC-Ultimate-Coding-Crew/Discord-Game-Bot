@@ -75,8 +75,8 @@ async def battle1v1(message, client):
                 txt="{} has won! You have earned 20 flight tickets!".format(p1.mention)
                 with open('user_data.json', 'r') as json_file:
                     data = json.load(json_file)
-                    data[str(p1.id)]['Money']+=20
-                    txt+="\nYou now have {} flight tickets!".format(data[str(p1.id)]['Money'])
+                    data[str(p1.id)]['Tickets']+=20
+                    txt+="\nYou now have {} flight tickets!".format(data[str(p1.id)]['Tickets'])
                     with open('user_data.json', 'w') as output_file:
                         json.dump(data,output_file)
                 await current_channel.send(txt)
@@ -94,8 +94,8 @@ async def battle1v1(message, client):
                 txt="{} has won! You have earned 20 flight tickets!".format(p2.mention)
                 with open('user_data.json', 'r') as json_file:
                     data = json.load(json_file)
-                    data[str(p2.id)]['Money']+=20
-                    txt+="\nYou now have {} flight tickets!".format(data[str(p2.id)]['Money'])
+                    data[str(p2.id)]['Tickets']+=20
+                    txt+="\nYou now have {} flight tickets!".format(data[str(p2.id)]['Tickets'])
                     with open('user_data.json', 'w') as output_file:
                         json.dump(data,output_file)
                 await current_channel.send(txt)

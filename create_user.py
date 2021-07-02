@@ -30,7 +30,7 @@ async def create_new_user(message):
                 await message.channel.send('You already have an account!')
 
             else:
-                chosen_cards=[choice(get_possible_cards()) for i in range(2)]
+                chosen_cards=[choice(get_possible_cards()) for i in range(5)]
                 
                 post_data={
                     message.author.id:{

@@ -16,9 +16,9 @@ async def marketplace(message,client):
 async def getnewcards(message):
 	with open('user_data.json') as json_file:
 		data=json.load(json_file)
-		money=data[str(message.author.id)]['Money']
+		money=data[str(message.author.id)]['Tickets']
 		if(money>=100):
-			data[str(message.author.id)]['Money']-=100
+			data[str(message.author.id)]['Tickets']-=100
 			choices=get_possible_cards()
 			card=choice(choices)
 			toAdd={getTotalCards(message):card}
@@ -27,7 +27,7 @@ async def getnewcards(message):
 			json.dump(data,output)
 			airlineName=getAirlineName(card)
 			await message.channel.send("{0} received: {1}".format(message.author.mention,airlineName))
-			await message.channel.send("{0} has {1} coins remaining".format(message.author.mention,data[str(message.author.id)]['Money']))
+			await message.channel.send("{0} has {1} coins remaining".format(message.author.mention,data[str(message.author.id)]['Tickets']))
 		else:
 			await message.channel.send("Not enough money :(")
 
