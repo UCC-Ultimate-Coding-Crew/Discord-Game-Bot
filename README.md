@@ -43,6 +43,9 @@ To get rewarded for being active.
 The place to get a new card, which costs 100 flight tickets.
 
 ## Adding it to your server
+
+To add: https://discord.com/api/oauth2/authorize?client_id=844865413229051904&permissions=274878049280&scope=applications.commands%20bot
+
 The bot remains active for the first 21 days of every month as it is hosted by the free version of Heroku.
 
 
