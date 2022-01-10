@@ -3,7 +3,6 @@ import json
 from random import choice, sample
 from utilities import getCardsWithStats, getCards, printCards, printTopCard
 
-
 async def battle1v1(message, client):
     current_channel=message.channel
     opponent=message.mentions[0]
@@ -14,7 +13,6 @@ async def battle1v1(message, client):
         '{} has requested a battle with {}.\n Do you accept?(Press Y or yes to accept or anything else to deny.)'.format(
             message.author.mention, opponent.mention))
     def check(m):
-        
         return m.author == opponent and m.channel == current_channel
     
     accept=['yes', 'y']
@@ -40,7 +38,7 @@ async def battle1v1(message, client):
         await printTopCard(current_channel,p1.id, p1_ShuffledCards)
         await current_channel.send("Choose an attribute by either entering the number on the left or attribute name.")
         def check_attribute(m):
-            return m.channel == current_channel
+            return m.channel == current_channel and m.author==p1
         notAttribute=True
         attributes=[
             "Overall Rating",
@@ -53,6 +51,8 @@ async def battle1v1(message, client):
                     notAttribute=False
                     attribute.content=attributes[int(attribute.content)-1]
                 else:
+                    # with open('log.txt', 'w+') as outfile:
+                    #     outfile.write(str(attribute.content))
                     await current_channel.send("Shwooop! This is a wrong number.")
             else:
                 for i in attributes:
@@ -60,6 +60,8 @@ async def battle1v1(message, client):
                         notAttribute=False
                         attribute.content=attribute.content.title()
                 if notAttribute==True:
+                    with open('log.txt', 'a+') as outfile:
+                        outfile.write(str(attribute.content)+'\n')
                     await current_channel.send("Shwooop! This is a wrong attribute.")
         
         if p1_ShuffledCards[0][attribute.content] >= p2_ShuffledCards[0][attribute.content]:
