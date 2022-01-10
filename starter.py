@@ -54,5 +54,5 @@ async def on_message(message):
             await message.channel.send("You have {} flight tickets.".format(str(data[str(message.author.id)]['Tickets'])))
 
 token= os.environ.get("BOT_TOKEN")
-# token=open("token.txt", 'r').read()
+#token=open("token.txt", 'r').read()
 client.run(token)
