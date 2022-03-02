@@ -7,19 +7,19 @@ To know more about Trump Cards: https://en.wikipedia.org/wiki/Trump_(card_games)
 The official currency of the bot is *Flight Tickets* (No, cannot buy actual flight tickets with them sadly, believe me countless have tried)
 
 ## Commands 
-.help gets you the help menu!
+`.help` gets you the help menu!
 
-.start assigns you 5 random cards in the start
+`.start` assigns you 5 random cards in the start
 
-.battle gets you into the battleground to face an opponent 
+`.battle` gets you into the battleground to face an opponent 
 
-.trade allows you to swap cards with any interested player
+`.trade` allows you to swap cards with any interested player
 
-.claim gets you 5 flight tickets daily
+`.claim` gets you 5 flight tickets daily
 
-.tickets shows your current flight tickets
+`.tickets` shows your current flight tickets
 
-.market brings you to the marketplace
+`.market` brings you to the marketplace
 
 ## Play 
 ### Battle
