@@ -48,6 +48,9 @@ To add: https://discord.com/api/oauth2/authorize?client_id=844865413229051904&pe
 
 The bot remains active for the first 21 days of every month as it is hosted by the free version of Heroku.
 
+## Official Website 
+https://ucc-ultimate-coding-crew.github.io/Discord-Game-Bot/
+
 
 
 
