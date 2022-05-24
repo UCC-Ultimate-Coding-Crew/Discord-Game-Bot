@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+# Welcome to the Official Airline Trump Cards Website 
+Online Airline Cards Game for Discord hosted by Heroku 
 
-You can use the [editor on GitHub](https://github.com/UCC-Ultimate-Coding-Crew/Discord-Game-Bot/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+To know more about Trump Cards: https://en.wikipedia.org/wiki/Trump_(card_games)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Currency
+The official currency of the bot is *Flight Tickets* (No, cannot buy actual flight tickets with them sadly, believe me countless have tried)
 
-### Markdown
+## Commands 
+`.help` gets you the help menu!
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+`.start` assigns you 5 random cards in the start
 
-```markdown
-Syntax highlighted code block
+`.battle` gets you into the battleground to face an opponent 
 
-# Header 1
-## Header 2
-### Header 3
+`.trade` allows you to swap cards with any interested player
 
-- Bulleted
-- List
+`.claim` gets you 5 flight tickets daily
 
-1. Numbered
-2. List
+`.tickets` shows your current flight tickets
 
-**Bold** and _Italic_ and `Code` text
+`.market` brings you to the marketplace
 
-[Link](url) and ![Image](src)
-```
+## Play 
+### Battle
+To accept a battle request, press Y, y or Yes. To reject the request, press anything else.
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+In case of a tie, both players' current card attribute is the same, the player who had chosen that attribute wins.
 
-### Jekyll Themes
+A warrior wins when the opponent has no cards remaining.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/UCC-Ultimate-Coding-Crew/Discord-Game-Bot/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+You receive 20 flight tickets everytime you defeat your opponent and pride, obviously. 
 
-### Support or Contact
+### Trade 
+First the player to do the trade with is chosen and if they accept, then the cards are chosen.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Both players are free to reject the trade at any given moment.
+
+### Claim
+To get rewarded for being active.
+
+### Market
+The place to get a new card, which costs 100 flight tickets.
+
+## Adding it to your server
+
+To add: https://discord.com/api/oauth2/authorize?client_id=844865413229051904&permissions=274878049280&scope=applications.commands%20bot
+
+The bot remains active for the first 21 days of every month as it is hosted by the free version of Heroku.
