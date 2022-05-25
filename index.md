@@ -4,7 +4,7 @@ Online Airline Cards Game for Discord hosted by Heroku
 To know more about Trump Cards: [Trump Card Game](https://en.wikipedia.org/wiki/Trump_(card_games))
 
 ## Currency
-The official currency of the bot is *Flight Tickets* (No, cannot buy actual flight tickets with them sadly, believe me countless have tried)
+The official currency of the bot is *Flight Tickets* (<span style="font-family:Times New Roman; font-size:4em;">No, cannot buy actual flight tickets with them sadly, believe me countless have tried</span>)
 
 ## Commands 
 `.help` gets you the help menu!
@@ -29,7 +29,7 @@ In case of a tie, both players' current card attribute is the same, the player w
 
 A warrior wins when the opponent has no cards remaining.
 
-You receive 20 flight tickets everytime you defeat your opponent and pride, obviously. 
+You receive 20 flight tickets everytime you defeat your opponent and *pride, obviously. 
 
 ### Trade 
 First the player to do the trade with is chosen and if they accept, then the cards are chosen.
