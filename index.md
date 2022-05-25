@@ -1,7 +1,7 @@
 # Welcome to the Official Airline Trump Cards Website 
 Online Airline Cards Game for Discord hosted by Heroku 
 
-To know more about Trump Cards: [I'm an inline-style link](https://en.wikipedia.org/wiki/Trump_(card_games))
+To know more about Trump Cards: [Trump Card Game](https://en.wikipedia.org/wiki/Trump_(card_games))
 
 ## Currency
 The official currency of the bot is *Flight Tickets* (No, cannot buy actual flight tickets with them sadly, believe me countless have tried)
@@ -44,6 +44,6 @@ The place to get a new card, which costs 100 flight tickets.
 
 ## Adding it to your server
 
-To add: [I'm an inline-style link](https://discord.com/api/oauth2/authorize?client_id=844865413229051904&permissions=274878049280&scope=applications.commands%20bot)
+To add: [Add to server](https://discord.com/api/oauth2/authorize?client_id=844865413229051904&permissions=274878049280&scope=applications.commands%20bot)
 
 The bot remains active for the first 21 days of every month as it is hosted by the free version of Heroku.
