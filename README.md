@@ -1,4 +1,5 @@
 # Airline Trump Cards
+(No Longer Maintained)
 Online Airline Cards Game for Discord hosted by Heroku 
 
 To know more about Trump Cards: https://en.wikipedia.org/wiki/Trump_(card_games)
